@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/03/10 19:30:48 by go                #+#    #+#             */
+/*   Updated: 2022/03/13 18:59:27 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
-
-int	ft_check_error(int argc, char **argv)
+char	*ft_strrchr(const char *s, int c)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	if (c == '\0')
+		return ((char *)(s + i));
+	while (--i >= 0)
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+	return (0);
 }

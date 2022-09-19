@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 17:13:01 by go                #+#    #+#             */
+/*   Updated: 2022/03/11 17:14:23 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include <unistd.h>
 
-int	ft_check_error(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(fd, s, sizeof(*s) * i);
 }

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/03/10 21:04:38 by go                #+#    #+#             */
+/*   Updated: 2022/03/13 12:30:22 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "libft.h"
 
-int	ft_check_error(int argc, char **argv)
+void	*ft_calloc(size_t count, size_t size)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	char	*result;
+
+	result = malloc(size * count);
+	if (!result)
+		return (NULL);
+	ft_bzero(result, size * count);
+	return (result);
 }

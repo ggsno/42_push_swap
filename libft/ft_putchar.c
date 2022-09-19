@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 17:13:01 by go                #+#    #+#             */
-/*   Updated: 2022/03/11 17:14:23 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 17:10:23 by go                #+#    #+#             */
+/*   Updated: 2022/03/11 17:11:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "./libft.h"
 
-int	ft_putstr(char *s)
+int	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-	{	
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (s[i])
-		i++;
-	write(1, s, sizeof(*s) * i);
-	return (i);
+	write(1, &c, sizeof(c));
+	return (1);
 }

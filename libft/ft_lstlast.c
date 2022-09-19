@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsignednbr.c                                :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 16:19:19 by go                #+#    #+#             */
-/*   Updated: 2022/06/27 16:19:22 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 20:20:43 by go                #+#    #+#             */
+/*   Updated: 2022/03/11 20:23:09 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "libft.h"
 
-int	ft_putunsignednbr(unsigned int n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	number[10];
-	int		i;
-	int		rt_size;
+	t_list	*result;
 
-	i = 0;
-	while (n || i == 0)
-	{
-		number[i++] = (n % 10) + '0';
-		n /= 10;
-	}
-	rt_size = i;
-	while (i--)
-		write(1, &number[i], 1);
-	return (rt_size);
+	result = lst;
+	if (!result)
+		return (NULL);
+	while (result->next)
+		result = result->next;
+	return (result);
 }

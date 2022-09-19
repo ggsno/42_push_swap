@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 17:16:05 by go                #+#    #+#             */
+/*   Updated: 2022/03/11 17:18:07 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include <unistd.h>
 
-int	ft_check_error(int argc, char **argv)
+void	ft_putendl_fd(char *s, int fd)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(fd, s, i);
+	write(fd, "\n", 1);
 }

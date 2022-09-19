@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_putunsignednbr.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/06/27 16:19:19 by go                #+#    #+#             */
+/*   Updated: 2022/09/20 00:32:32 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "./libft.h"
 
-int	ft_check_error(int argc, char **argv)
+int	ft_putunsignednbr(unsigned int n)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	char	number[10];
+	int		i;
+	int		rt_size;
+
+	i = 0;
+	while (n || i == 0)
+	{
+		number[i++] = (n % 10) + '0';
+		n /= 10;
+	}
+	rt_size = i;
+	while (i--)
+		write(1, &number[i], 1);
+	return (rt_size);
 }

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_addr_hex.c                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 14:27:44 by go                #+#    #+#             */
-/*   Updated: 2022/06/27 16:12:21 by go               ###   ########.fr       */
+/*   Created: 2022/03/10 16:09:19 by go                #+#    #+#             */
+/*   Updated: 2022/03/13 21:09:26 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include <unistd.h>
 
-int	ft_print_addr_hex(void *arg)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned long long	addr;
-	char				str[16];
-	int					length;
-	int					i;
+	size_t	i;
+	int		is_null_terminated;
 
-	addr = (unsigned long long)arg;
 	i = 0;
-	while (i == 0 || addr)
+	is_null_terminated = 0;
+	while (src[i] != '\0')
 	{
-		if (addr % 16 >= 10)
-			str[i++] = addr % 16 - 10 + 'a';
-		else
-			str[i++] = addr % 16 + '0';
-		addr /= 16;
+		if (i == dstsize - 1 && dstsize != 0)
+		{
+			is_null_terminated = 1;
+			dst[i] = '\0';
+		}
+		else if (dstsize != 0 && i < dstsize - 1)
+			dst[i] = src[i];
+		i++;
 	}
-	length = i;
-	write(1, "0x", 2);
-	while (i--)
-		write(1, &str[i], 1);
-	return (length + 2);
+	if (is_null_terminated != 1 && dstsize != 0)
+		dst[i] = '\0';
+	return (i);
 }

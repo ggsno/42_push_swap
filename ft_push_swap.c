@@ -6,13 +6,13 @@
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/19 23:44:35 by go               ###   ########.fr       */
+/*   Updated: 2022/09/20 00:35:26 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
 	if (!ft_check_error(argc, argv))
 		return (1);

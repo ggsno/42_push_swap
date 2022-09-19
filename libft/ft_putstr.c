@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 14:19:44 by go                #+#    #+#             */
-/*   Updated: 2022/05/02 16:34:03 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 17:13:01 by go                #+#    #+#             */
+/*   Updated: 2022/03/11 17:14:23 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "./libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_putstr(char *s)
+{
+	int	i;
 
-int		ft_printf(const char *format, ...);
-int		ft_print_addr_hex(void *arg);
-int		ft_putchar(char c);
-int		ft_putnbr_base(unsigned int nbr, char *base);
-int		ft_putnbr(int n);
-int		ft_putstr(char *s);
-int		ft_putunsignednbr(unsigned int n);
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	if (!s)
+	{	
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (s[i])
+		i++;
+	write(1, s, sizeof(*s) * i);
+	return (i);
+}

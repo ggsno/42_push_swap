@@ -6,11 +6,11 @@
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:18:56 by go                #+#    #+#             */
-/*   Updated: 2022/06/27 16:19:06 by go               ###   ########.fr       */
+/*   Updated: 2022/09/20 00:32:32 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "./libft.h"
 
 static int	print_n_notation(unsigned int decimal, char *base, int base_number)
 {

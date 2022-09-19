@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/20 00:35:15 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 12:44:17 by go                #+#    #+#             */
+/*   Updated: 2022/03/12 11:27:04 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "libft.h"
 
-int	ft_check_error(int argc, char **argv)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	// TODO: 에러 처리
-	if (argc < 2 || ft_strlen(argv[1]) > 3)
-		return (0);
-	return (1);
+	char	*result;
+	size_t	r_i;
+	size_t	s_i;
+
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!result)
+		return (NULL);
+	r_i = 0;
+	s_i = 0;
+	while (s1[s_i])
+		result[r_i++] = s1[s_i++];
+	s_i = 0;
+	while (s2[s_i])
+		result[r_i++] = s2[s_i++];
+	result[r_i] = '\0';
+	return (result);
 }
