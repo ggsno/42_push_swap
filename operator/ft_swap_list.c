@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 18:30:32 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 21:12:34 by go               ###   ########.fr       */
+/*   Updated: 2022/09/25 22:01:12 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_sa(t_list **list_a, int is_print)
 {
-	char	*temp;
+	int	temp;
 
 	if (!(*list_a) || !(*list_a)->next)
 		return (0);
@@ -28,7 +28,7 @@ int	ft_sa(t_list **list_a, int is_print)
 
 int	ft_sb(t_list **list_b, int is_print)
 {
-	char	*temp;
+	int	temp;
 
 	if (!(*list_b) || !(*list_b)->next)
 		return (0);

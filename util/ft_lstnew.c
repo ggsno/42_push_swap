@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: go <go@student.42seoul.kr>                 +#+  +:+       +#+        */
+/*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 17:13:01 by go                #+#    #+#             */
-/*   Updated: 2022/03/11 17:14:23 by go               ###   ########.fr       */
+/*   Created: 2022/03/11 18:49:41 by go                #+#    #+#             */
+/*   Updated: 2022/09/25 21:57:47 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../ft_push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(int content)
 {
-	size_t	i;
+	t_list	*result;
 
-	i = 0;
-	while (s[i])
-		i++;
-	write(fd, s, sizeof(*s) * i);
+	result = (t_list *)malloc(sizeof(t_list));
+	if (!result)
+		return (NULL);
+	result->content = content;
+	result->next = NULL;
+	return (result);
 }
