@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   ft_push_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 19:15:00 by go               ###   ########.fr       */
+/*   Created: 2022/09/25 18:11:17 by go                #+#    #+#             */
+/*   Updated: 2022/09/25 19:05:32 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../ft_push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_pa(t_list **list_a, t_list **list_b)
 {
-	int 	i;
-	t_list	**list_a;
 	t_list	*temp;
 
-	if (!ft_check_error(argc, &argv[2]))
-		return (1);
-
-	list_a = ft_create_list(argc, argv);
-	i = 0;
-	temp = *list_a;
-
-
-	while (temp)
-    {
-        ft_printf("%s ", temp->content);
-		temp = temp->next;
-    }    
-
-	ft_ra(list_a, 1);
-	temp = *list_a;
-	while (temp)
-    {
-        ft_printf("%s ", temp->content);
-		temp = temp->next;
-    }
+	if (!(*list_b))
 		return (0);
+	temp = *list_b;
+	*list_b = (*list_b)->next;
+	temp->next = *list_a;
+	*list_a = temp;
+	ft_putstr("pa\n");
+	return (1);
+}
+
+int	ft_pb(t_list **list_a, t_list **list_b)
+{
+	t_list	*temp;
+
+	if (!(*list_a))
+		return (0);
+	temp = *list_a;
+	*list_a = (*list_a)->next;
+	temp->next = *list_b;
+	*list_b = temp;
+	ft_putstr("pb\n");
+	return (1);
 }
