@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 19:15:00 by go               ###   ########.fr       */
+/*   Updated: 2022/09/25 21:07:55 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	int 	i;
-	t_list	**list_a;
+	t_list	*list_a;
 	t_list	*temp;
 
 	if (!ft_check_error(argc, &argv[2]))
@@ -23,8 +23,7 @@ int	main(int argc, char **argv)
 
 	list_a = ft_create_list(argc, argv);
 	i = 0;
-	temp = *list_a;
-
+	temp = list_a;
 
 	while (temp)
     {
@@ -32,8 +31,15 @@ int	main(int argc, char **argv)
 		temp = temp->next;
     }    
 
-	ft_ra(list_a, 1);
-	temp = *list_a;
+	ft_rb(&list_a, 1);
+	temp = list_a;
+	while (temp)
+    {
+        ft_printf("%s ", temp->content);
+		temp = temp->next;
+    }
+	ft_rrb(&list_a, 1);
+	temp = list_a;
 	while (temp)
     {
         ft_printf("%s ", temp->content);

@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:30 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 18:48:11 by go               ###   ########.fr       */
+/*   Updated: 2022/09/25 21:07:41 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ int	ft_pb(t_list **list_a, t_list **list_b);
 int	ft_ra(t_list **list_a, int is_print);
 int	ft_rb(t_list **list_b, int is_print);
 int	ft_rr(t_list **list_a, t_list **list_b);
-int	ft_sa(t_list *list_a, int is_print);
-int	ft_sb(t_list *list_b, int is_print);
-int	ft_ss(t_list *list_a, t_list *list_b);
+int	ft_sa(t_list **list_a, int is_print);
+int	ft_sb(t_list **list_b, int is_print);
+int	ft_ss(t_list **list_a, t_list **list_b);
+int	ft_rra(t_list **list_a, int is_print);
+int	ft_rrb(t_list **list_b, int is_print);
+int	ft_rrr(t_list **list_a, t_list **list_b);
 
 #endif

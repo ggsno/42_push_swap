@@ -6,7 +6,7 @@
 #    By: go <go@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 22:37:19 by go                #+#    #+#              #
-#    Updated: 2022/09/25 18:51:48 by go               ###   ########.fr        #
+#    Updated: 2022/09/25 20:34:24 by go               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS = ft_push_swap.c ft_check_error.c
 SRCS_OPERATOR = ${OPRERATOR_DIR}ft_create_list.c \
 		${OPRERATOR_DIR}ft_push_list.c \
 		${OPRERATOR_DIR}ft_swap_list.c \
-		${OPRERATOR_DIR}ft_rotate_list.c
+		${OPRERATOR_DIR}ft_rotate_list.c \
+		${OPRERATOR_DIR}ft_reverse_rotate_list.c
 LIB = libft.a
 LIB_DIR = libft
 RM = rm
