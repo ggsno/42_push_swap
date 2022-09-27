@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 23:00:31 by go               ###   ########.fr       */
+/*   Updated: 2022/09/28 07:24:34 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ int	is_sorted(t_list *head)
 
 int	main(int argc, char **argv)
 {
-	int 	i;
 	t_list	*list_a;
-	t_list	*temp;
+	t_list	*list_b;
 
 	if (!ft_check_error(argc, &argv[2]))
 		return (1);
 
-	list_a = ft_create_list(argc, argv);
+	list_a = ft_set_list(argc, argv);
+	list_b = NULL;
+	ft_sort(&list_a, &list_b);
 	return (0);
 }
 
