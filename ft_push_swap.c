@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 16:17:24 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ int	main(int argc, char **argv)
 	t_list	*list_a;
 	t_list	*list_b;
 
-	if (!ft_check_error(argc, &argv[2]))
+	if (!ft_check_error(argc, argv))
 		return (1);
 
-	list_a = ft_set_list(argc, argv);
+	list_a = NULL;
+	ft_set_list(argc, argv, &list_a);
 	list_b = NULL;
 	ft_sort(&list_a, &list_b);
 	return (0);

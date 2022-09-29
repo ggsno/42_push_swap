@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 15:23:45 by go               ###   ########.fr       */
+/*   Created: 2022/09/29 14:32:35 by go                #+#    #+#             */
+/*   Updated: 2022/09/29 14:35:58 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../ft_push_swap.h"
 
-int	ft_check_error(int argc, char **argv)
+void	ft_lstclear(t_list **lst)
 {
-	// TODO: 에러 처리
-	if (argc < 2)
-		return (0);
-	if (argv == NULL)
-		return (3);
-	return (1);
+	t_list	*ptr;
+	t_list	*next;
+
+	ptr = *lst;
+	while (ptr)
+	{
+		next = ptr->next;
+        free(ptr);
+		ptr = next;
+	}
+	*lst = NULL;
 }
+

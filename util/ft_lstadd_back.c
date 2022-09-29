@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 15:23:45 by go               ###   ########.fr       */
+/*   Created: 2022/09/29 14:38:02 by go                #+#    #+#             */
+/*   Updated: 2022/09/29 14:38:11 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "../ft_push_swap.h"
 
-int	ft_check_error(int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	// TODO: 에러 처리
-	if (argc < 2)
-		return (0);
-	if (argv == NULL)
-		return (3);
-	return (1);
+	t_list	*temp;
+
+	temp = *lst;
+	if (!temp)
+	{
+		*lst = new;
+		return ;
+	}
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
 }

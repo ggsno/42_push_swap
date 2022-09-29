@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:30 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 14:17:49 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 15:12:57 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_itoa(int n);
 size_t	ft_strlen(const char *s);
 int		ft_get_bigger(int a, int b);
 int		ft_abs(int num);
+char	**ft_split(char const *str, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_pa(t_list **list_a, t_list **list_b);
 int		ft_pb(t_list **list_a, t_list **list_b);
 int		ft_ra(t_list **list_a, int is_print);
@@ -43,7 +45,7 @@ int		ft_rra(t_list **list_a, int is_print);
 int		ft_rrb(t_list **list_b, int is_print);
 int		ft_rrr(t_list **list_a, t_list **list_b);
 int		ft_check_error(int argc, char **argv);
-t_list	*ft_set_list(int argc, char **argv);
+void	*ft_set_list(int argc, char **argv, t_list** list);
 void	ft_sort(t_list **list_a, t_list **list_b);
 
 #endif
