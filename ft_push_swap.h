@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:30 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 15:12:57 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 17:32:03 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_atoi(const char *str);
 t_list	*ft_lstnew(int c);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *list);
+void	ft_lstclear(t_list **lst);
 int		ft_putstr(char *s);
 char	*ft_itoa(int n);
 size_t	ft_strlen(const char *s);

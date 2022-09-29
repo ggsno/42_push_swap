@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:32:35 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 14:35:58 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 17:33:10 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst)
 	ptr = *lst;
 	while (ptr)
 	{
-		next = ptr->next;
+		next = ptr->n;
         free(ptr);
 		ptr = next;
 	}

@@ -6,7 +6,7 @@
 #    By: go <go@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 22:37:19 by go                #+#    #+#              #
-#    Updated: 2022/09/29 15:02:26 by go               ###   ########.fr        #
+#    Updated: 2022/09/29 17:32:56 by go               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS_OPERATOR = ${OPRERATOR_DIR}ft_set_list.c \
 		${UTIL_DIR}ft_lstlast.c \
 		${UTIL_DIR}ft_lstnew.c \
 		${UTIL_DIR}ft_lstsize.c \
+		${UTIL_DIR}ft_lstclear.c \
 		${UTIL_DIR}ft_putstr.c \
 		${UTIL_DIR}ft_itoa.c \
 		${UTIL_DIR}ft_strlen.c \
