@@ -6,41 +6,34 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 06:15:52 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 12:30:01 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 14:15:45 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static void	ft_set_better_rotate(int *origin_a, int *origin_b, int new_a, int new_b)
+static void	ft_set_better_rotate(int *old_a, int *old_b, int new_a, int new_b)
 {
 	int	origin_cnt;
 	int	new_cnt;
 
 	origin_cnt = 0;
 	new_cnt = 0;
-	if ((0 < *origin_a && 0 < *origin_b) || (*origin_a < 0 && *origin_b < 0))
-		origin_cnt = ft_get_bigger(ft_abs(*origin_a), ft_abs(*origin_b));
+	if ((0 < *old_a && 0 < *old_b) || (*old_a < 0 && *old_b < 0))
+		origin_cnt = ft_get_bigger(ft_abs(*old_a), ft_abs(*old_b));
 	else
-		origin_cnt = ft_abs(*origin_a) + ft_abs(*origin_b);
+		origin_cnt = ft_abs(*old_a) + ft_abs(*old_b);
 	if ((0 < new_a && 0 < new_b) || (new_a < 0 && new_b < 0))
 		new_cnt = ft_get_bigger(ft_abs(new_a), ft_abs(new_b));
 	else
 		new_cnt = ft_abs(new_a) + ft_abs(new_b);
 	if (new_cnt < origin_cnt)
 	{
-		*origin_a = new_a;
-		*origin_b = new_b;
+		*old_a = new_a;
+		*old_b = new_b;
 	}
 }
 
-
-
-/**
-* la === list a
-* pb === previous b
-* b === pointer b
-*/
 static void	ft_set_best(t_list *la, t_list *lb, int *min_a, int *min_b)
 {
 	int		pb;
@@ -63,35 +56,35 @@ static void	ft_set_best(t_list *la, t_list *lb, int *min_a, int *min_b)
 		}
 		if (ft_lstsize(lb) / 2 < rotate_cnt_b)
 			rotate_cnt_b = -(ft_lstsize(lb) - rotate_cnt_b);
-		if ((ft_lstsize(la) + rotate_cnt_a )/ 2 < rotate_cnt_a)
+		if ((ft_lstsize(la) + rotate_cnt_a) / 2 < rotate_cnt_a)
 			rotate_cnt_a = -(ft_lstsize(la) - rotate_cnt_a);
 		ft_set_better_rotate(min_a, min_b, rotate_cnt_a++, rotate_cnt_b);
 		la = la->n;
 	}
 }
 
-static void	ft_best_rotate(t_list **list_a, t_list **list_b, int cnt_a, int cnt_b)
+static void	ft_best_rotate(t_list **lst_a, t_list **lst_b, int cnt_a, int cnt_b)
 {
 	while (0 < cnt_a && 0 < cnt_b)
 	{
-		ft_rr(list_a, list_b);
+		ft_rr(lst_a, lst_b);
 		cnt_a--;
 		cnt_b--;
 	}
 	while (cnt_a < 0 && cnt_b < 0)
 	{
-		ft_rrr(list_a, list_b);
+		ft_rrr(lst_a, lst_b);
 		cnt_a++;
 		cnt_b++;
 	}
 	while (0 < cnt_a--)
-		ft_ra(list_a, 1);
+		ft_ra(lst_a, 1);
 	while (++cnt_a < 0)
-		ft_rra(list_a, 1);
+		ft_rra(lst_a, 1);
 	while (0 < cnt_b--)
-		ft_rb(list_b, 1);
+		ft_rb(lst_b, 1);
 	while (++cnt_b < 0)
-		ft_rrb(list_b, 1);
+		ft_rrb(lst_b, 1);
 }
 
 static void	ft_rb_sort_b(t_list **list_b)
@@ -136,7 +129,7 @@ void	ft_sort(t_list **list_a, t_list **list_b)
 		ft_best_rotate(list_a, list_b, min_rotate_way_a, min_rotate_way_b);
 		ft_pb(list_a, list_b);
 	}
-	ft_rb_sort_b(list_b);	
+	ft_rb_sort_b(list_b);
 	i = ft_lstsize(*list_b);
 	while (i--)
 		ft_pa(list_a, list_b);

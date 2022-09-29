@@ -6,15 +6,15 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:33:42 by go                #+#    #+#             */
-/*   Updated: 2022/09/28 10:34:12 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 14:19:46 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_push_swap.h"
 
-int ft_get_bigger(int a, int b)
+int	ft_get_bigger(int a, int b)
 {
-    if (a > b)
-        return (a);
-    return (b);
+	if (a > b)
+		return (a);
+	return (b);
 }
