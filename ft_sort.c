@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 06:15:52 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 14:15:45 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 17:05:21 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,11 @@ static void	ft_set_best(t_list *la, t_list *lb, int *min_a, int *min_b)
 		if (ft_lstsize(lb) / 2 < rotate_cnt_b)
 			rotate_cnt_b = -(ft_lstsize(lb) - rotate_cnt_b);
 		if ((ft_lstsize(la) + rotate_cnt_a) / 2 < rotate_cnt_a)
-			rotate_cnt_a = -(ft_lstsize(la) - rotate_cnt_a);
-		ft_set_better_rotate(min_a, min_b, rotate_cnt_a++, rotate_cnt_b);
+			pb = -(ft_lstsize(la));
+		else
+			pb = rotate_cnt_a;
+		ft_set_better_rotate(min_a, min_b, pb, rotate_cnt_b);
+		rotate_cnt_a++;
 		la = la->n;
 	}
 }
