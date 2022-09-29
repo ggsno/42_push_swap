@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 18:23:45 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 21:12:12 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 12:34:33 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ int	ft_rra(t_list **list_a, int is_print)
 	t_list	*will_be_tail;
 	t_list	*will_be_second;
 
-	if (!(*list_a) || !((*list_a)->next))
+	if (!(*list_a) || !((*list_a)->n))
 		return (0);
 	will_be_tail = *list_a;
-	while (will_be_tail->next->next)
-		will_be_tail = will_be_tail->next;
+	while (will_be_tail->n->n)
+		will_be_tail = will_be_tail->n;
 	will_be_second = *list_a;
 	*list_a = ft_lstlast(*list_a);
-	(*list_a)->next = will_be_second;
-	will_be_tail->next = NULL;
+	(*list_a)->n = will_be_second;
+	will_be_tail->n = NULL;
 	if (is_print == 1)
 		ft_putstr("rra\n");
 	return (1);
@@ -36,17 +36,17 @@ int	ft_rrb(t_list **list_b, int is_print)
 	t_list	*will_be_tail;
 	t_list	*will_be_second;
 
-	if (!(*list_b) || !((*list_b)->next))
+	if (!(*list_b) || !((*list_b)->n))
 		return (0);
 	will_be_tail = *list_b;
-	while (will_be_tail->next->next)
-		will_be_tail = will_be_tail->next;
+	while (will_be_tail->n->n)
+		will_be_tail = will_be_tail->n;
 	will_be_second = *list_b;
 	*list_b = ft_lstlast(*list_b);
-	(*list_b)->next = will_be_second;
-	will_be_tail->next = NULL;
+	(*list_b)->n = will_be_second;
+	will_be_tail->n = NULL;
 	if (is_print == 1)
-		ft_putstr("rra\n");
+		ft_putstr("rrb\n");
 	return (1);
 }
 

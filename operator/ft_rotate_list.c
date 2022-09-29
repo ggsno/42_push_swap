@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 18:23:45 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 21:12:19 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	ft_ra(t_list **list_a, int is_print)
 {
 	t_list	*will_be_head;
 
-	if (!(*list_a) || !((*list_a)->next))
+	if (!(*list_a) || !((*list_a)->n))
 		return (0);
-	will_be_head = (*list_a)->next;
-	ft_lstlast(*list_a)->next = *list_a;
-	(*list_a)->next = NULL;
+	will_be_head = (*list_a)->n;
+	ft_lstlast(*list_a)->n = *list_a;
+	(*list_a)->n = NULL;
 	*list_a = will_be_head;
 	if (is_print == 1)
 		ft_putstr("ra\n");
@@ -31,11 +31,11 @@ int	ft_rb(t_list **list_b, int is_print)
 {
 	t_list	*will_be_head;
 
-	if (!(*list_b) || !((*list_b)->next))
+	if (!(*list_b) || !((*list_b)->n))
 		return (0);
-	will_be_head = (*list_b)->next;
-	ft_lstlast(*list_b)->next = *list_b;
-	(*list_b)->next = NULL;
+	will_be_head = (*list_b)->n;
+	ft_lstlast(*list_b)->n = *list_b;
+	(*list_b)->n = NULL;
 	*list_b = will_be_head;
 	if (is_print == 1)
 		ft_putstr("rb\n");

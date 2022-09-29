@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 06:23:25 by go                #+#    #+#             */
-/*   Updated: 2022/09/28 07:21:21 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int ft_lstsize(t_list *list)
 	size = 0;
 	while (list)
 	{
-		list = list->next;
+		list = list->n;
 		size++;
 	}
 	return size;

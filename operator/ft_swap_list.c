@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 18:30:32 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 22:01:12 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	ft_sa(t_list **list_a, int is_print)
 {
 	int	temp;
 
-	if (!(*list_a) || !(*list_a)->next)
+	if (!(*list_a) || !(*list_a)->n)
 		return (0);
-	temp = (*list_a)->content;
-	(*list_a)->content = (*list_a)->next->content;
-	(*list_a)->next->content = temp;
+	temp = (*list_a)->c;
+	(*list_a)->c = (*list_a)->n->c;
+	(*list_a)->n->c = temp;
 	if (is_print == 1)
 		ft_putstr("sa\n");
 	return (1);
@@ -30,11 +30,11 @@ int	ft_sb(t_list **list_b, int is_print)
 {
 	int	temp;
 
-	if (!(*list_b) || !(*list_b)->next)
+	if (!(*list_b) || !(*list_b)->n)
 		return (0);
-	temp = (*list_b)->content;
-	(*list_b)->content = (*list_b)->next->content;
-	(*list_b)->next->content = temp;
+	temp = (*list_b)->c;
+	(*list_b)->c = (*list_b)->n->c;
+	(*list_b)->n->c = temp;
 	if (is_print == 1)
 		ft_putstr("sb\n");
 	return (1);

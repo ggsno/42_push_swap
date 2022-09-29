@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/09/28 07:24:34 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	is_sorted(t_list *head)
 	min = -1;
 	while (head)
 	{
-		if (head->content < min)
+		if (head->c < min)
 			return (0);
-		min = head->content;
-		head = head->next;
+		min = head->c;
+		head = head->n;
 	}
 	return (1);
 }
@@ -45,16 +45,16 @@ int	main(int argc, char **argv)
 // 	temp = list_a;
 	// while (temp)
     // {
-    //     ft_putstr(ft_itoa(temp->content));
-	// 	temp = temp->next;
+    //     ft_putstr(ft_itoa(temp->c));
+	// 	temp = temp->n;
     // }    
 
 	// ft_sb(&list_a, 1);
 	// temp = list_a;
 	// while (temp)
     // {
-    //     ft_putstr(ft_itoa(temp->content));
-	// 	temp = temp->next;
+    //     ft_putstr(ft_itoa(temp->c));
+	// 	temp = temp->n;
     // }
 	// if (is_sorted(list_a))
 	// 	ft_putstr("sorted");
@@ -62,8 +62,8 @@ int	main(int argc, char **argv)
 	// temp = list_a;
 	// while (temp)
     // {
-    //     ft_putstr(ft_itoa(temp->content));
-	// 	temp = temp->next;
+    //     ft_putstr(ft_itoa(temp->c));
+	// 	temp = temp->n;
     // }
 	// if (is_sorted(list_a))
 	// 	ft_putstr("sorted");

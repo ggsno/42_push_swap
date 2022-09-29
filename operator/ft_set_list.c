@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:21:12 by go                #+#    #+#             */
-/*   Updated: 2022/09/28 07:15:32 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_list	*ft_set_list(int argc, char **argv)
 	i = 1;
 	list = ft_lstnew(ft_atoi(argv[i++]));
 	while (i < argc)
-		ft_lstlast(list)->next = ft_lstnew(ft_atoi(argv[i++]));
+		ft_lstlast(list)->n = ft_lstnew(ft_atoi(argv[i++]));
 	return (list);
 }

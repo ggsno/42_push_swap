@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 20:20:43 by go                #+#    #+#             */
-/*   Updated: 2022/09/25 21:57:46 by go               ###   ########.fr       */
+/*   Updated: 2022/09/29 10:06:48 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	result = lst;
 	if (!result)
 		return (NULL);
-	while (result->next)
-		result = result->next;
+	while (result->n)
+		result = result->n;
 	return (result);
 }
