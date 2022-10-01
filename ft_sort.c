@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 06:15:52 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 22:03:30 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 22:14:53 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static void	ft_set_better_rotate(int *old_a, int *old_b, int new_a, int new_b)
 		*old_b = new_b;
 	}
 }
-
-
 
 static void	ft_set_best(t_list *la, t_list *lb, int *min_a, int *min_b)
 {

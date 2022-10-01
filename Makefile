@@ -6,12 +6,12 @@
 #    By: go <go@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 22:37:19 by go                #+#    #+#              #
-#    Updated: 2022/10/01 22:04:47 by go               ###   ########.fr        #
+#    Updated: 2022/10/01 22:15:00 by go               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 OPRERATOR_DIR = operator/
 UTIL_DIR = util/
 SRCS_OPERATOR = ${OPRERATOR_DIR}ft_set_list.c \
