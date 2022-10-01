@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_get_rotate_count.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 14:32:35 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 21:50:26 by go               ###   ########.fr       */
+/*   Created: 2022/10/01 22:02:51 by go                #+#    #+#             */
+/*   Updated: 2022/10/01 22:04:18 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_push_swap.h"
+#include "ft_push_swap.h"
 
-void	ft_lstclear(t_list **lst)
+int	ft_get_rotate_count(t_list *la, int rotate_cnt_a)
 {
-	t_list	*ptr;
-	t_list	*next;
-
-	ptr = *lst;
-	while (ptr)
-	{
-		next = ptr->n;
-		free(ptr);
-		ptr = next;
-	}
-	*lst = NULL;
+	if ((ft_lstsize(la) + rotate_cnt_a) / 2 < rotate_cnt_a)
+		return (-(ft_lstsize(la)));
+	return (rotate_cnt_a);
 }

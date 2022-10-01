@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:30 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 19:53:05 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 22:03:57 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int		ft_ss(t_list **list_a, t_list **list_b);
 int		ft_rra(t_list **list_a, int is_print);
 int		ft_rrb(t_list **list_b, int is_print);
 int		ft_rrr(t_list **list_a, t_list **list_b);
-// int		ft_check_error(int argc, char **argv);
 void	ft_print_error_exit(int err_no);
-void	*ft_set_list(int argc, char **argv, t_list** list);
+void	*ft_set_list(int argc, char **argv, t_list **list);
+int		ft_get_rotate_count(t_list *la, int rotate_cnt_a);
 void	ft_sort(t_list **list_a, t_list **list_b);
 void	ft_minor_sort(t_list **list_a, t_list **list_b);
 

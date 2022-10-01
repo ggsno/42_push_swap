@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:21:12 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 19:43:26 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 21:51:45 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	is_valid_letter(const char *str)
 	return (1);
 }
 
-int has_duplicate(t_list *list)
+int	has_duplicate(t_list *list)
 {
 	t_list	*temp;
 	int		comp;
@@ -59,9 +59,9 @@ int has_duplicate(t_list *list)
 	return (0);
 }
 
-static int	has_space(char* str)
+static int	has_space(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -73,8 +73,7 @@ static int	has_space(char* str)
 	return (0);
 }
 
-
-static void ppap(char **dance, t_list** list, int i, int is_dynamic_dance)
+static void	ppap(char **dance, t_list **list, int i, int is_dynamic_dance)
 {
 	if (!is_valid_letter(dance[i]))
 	{
@@ -89,7 +88,7 @@ static void ppap(char **dance, t_list** list, int i, int is_dynamic_dance)
 		*list = ft_lstnew(ft_atoi(dance[i]));
 }
 
-void	*ft_set_list(int argc, char **argv, t_list** list)
+void	*ft_set_list(int argc, char **argv, t_list **list)
 {
 	int		i;
 	int		j;
@@ -103,7 +102,7 @@ void	*ft_set_list(int argc, char **argv, t_list** list)
 			temp = ft_split(argv[i], ' ');
 			j = -1;
 			while (temp[++j])
-				ppap(temp, list, j,1);
+				ppap(temp, list, j, 1);
 			free(temp);
 		}
 		else

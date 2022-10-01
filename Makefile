@@ -6,7 +6,7 @@
 #    By: go <go@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 22:37:19 by go                #+#    #+#              #
-#    Updated: 2022/10/01 19:53:21 by go               ###   ########.fr        #
+#    Updated: 2022/10/01 22:04:47 by go               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS_OPERATOR = ${OPRERATOR_DIR}ft_set_list.c \
 		${UTIL_DIR}ft_abs.c \
 		${UTIL_DIR}ft_split.c \
 		${UTIL_DIR}ft_substr.c
-SRCS = ft_push_swap.c ft_check_error.c ft_sort.c ft_minor_sort.c ${SRCS_OPERATOR}
+SRCS = ft_push_swap.c ft_check_error.c ft_get_rotate_count.c ft_sort.c ft_minor_sort.c ${SRCS_OPERATOR}
 OBJS = ${SRCS:.c=.o}
 RM = rm
 RMFLAGS = -f
