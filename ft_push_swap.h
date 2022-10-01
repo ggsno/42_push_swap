@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:30 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 19:05:08 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 19:53:05 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int		ft_rrr(t_list **list_a, t_list **list_b);
 void	ft_print_error_exit(int err_no);
 void	*ft_set_list(int argc, char **argv, t_list** list);
 void	ft_sort(t_list **list_a, t_list **list_b);
+void	ft_minor_sort(t_list **list_a, t_list **list_b);
 
 #endif

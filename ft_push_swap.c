@@ -6,13 +6,13 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:43:28 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 19:04:07 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 19:51:58 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	is_sorted(t_list *head)
+static int	is_sorted(t_list *head)
 {
 	int	min;
 
@@ -36,34 +36,17 @@ int	main(int argc, char **argv)
 		return (1);
 	list_a = NULL;
 	ft_set_list(argc, argv, &list_a);
+	if (is_sorted(list_a))
+	{
+		ft_lstclear(&list_a);
+		return (0);
+	}
 	list_b = NULL;
-	ft_sort(&list_a, &list_b);
+	if (ft_lstsize(list_a) < 6)
+		ft_minor_sort(&list_a, &list_b);
+	else
+		ft_sort(&list_a, &list_b);
+	ft_lstclear(&list_a);
+	ft_lstclear(&list_b);
 	return (0);
 }
-
-// i = 0;
-// 	temp = list_a;
-	// while (temp)
-    // {
-    //     ft_putstr(ft_itoa(temp->c));
-	// 	temp = temp->n;
-    // }    
-
-	// ft_sb(&list_a, 1);
-	// temp = list_a;
-	// while (temp)
-    // {
-    //     ft_putstr(ft_itoa(temp->c));
-	// 	temp = temp->n;
-    // }
-	// if (is_sorted(list_a))
-	// 	ft_putstr("sorted");
-	// ft_rrb(&list_a, 1);
-	// temp = list_a;
-	// while (temp)
-    // {
-    //     ft_putstr(ft_itoa(temp->c));
-	// 	temp = temp->n;
-    // }
-	// if (is_sorted(list_a))
-	// 	ft_putstr("sorted");
