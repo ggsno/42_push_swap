@@ -6,18 +6,14 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 23:38:13 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 15:23:45 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 19:04:16 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	ft_check_error(int argc, char **argv)
+void	ft_print_error_exit(int err_no)
 {
-	// TODO: 에러 처리
-	if (argc < 2)
-		return (0);
-	if (argv == NULL)
-		return (3);
-	return (1);
+	ft_putstr("Error\n");
+	exit(err_no);
 }
