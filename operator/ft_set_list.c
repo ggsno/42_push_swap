@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:21:12 by go                #+#    #+#             */
-/*   Updated: 2022/10/01 19:36:55 by go               ###   ########.fr       */
+/*   Updated: 2022/10/01 19:43:26 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int	is_valid_letter(const char *str)
 		result += str[i] - '0';
 		i++;
 	}
+	result *= sign;
 	if (ft_strlen(str) > i || result > 2147483647 || result < -2147483648)
 		return (0);
 	return (1);
