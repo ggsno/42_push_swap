@@ -6,7 +6,7 @@
 /*   By: go <go@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:46:51 by go                #+#    #+#             */
-/*   Updated: 2022/09/29 14:48:15 by go               ###   ########.fr       */
+/*   Updated: 2022/10/02 16:21:04 by go               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_splitedcount(char const *str, char c)
 	return (valid_seperate_count);
 }
 
-static void	*ft_allfree(char **lst)
+void	*ft_allfree(char **lst)
 {
 	size_t	i;
 
